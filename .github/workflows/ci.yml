@@ -1,3 +1,4 @@
+
 name: Playwright Tests
 
 on:
@@ -23,6 +24,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Ensure proper permissions
+        run: sudo chmod -R 777 /home/runner/work
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
